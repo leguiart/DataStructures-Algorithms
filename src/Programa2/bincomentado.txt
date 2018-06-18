@@ -3,7 +3,7 @@
 #20 de agosto de 2015
 #Algoritmos y Estructuras de Datos
 #Programa: 02
-#Autores: Eguiarte Morett Luis Andrés, Vilchis Martínez Misael, Alvarado de Páz Carlos Fernando, Romo Bravo Katia Fernanda
+#Author: @leguiart
 
 #Definiendo una función que retorna una cadena con elementos de una lista.
 def st(lst):

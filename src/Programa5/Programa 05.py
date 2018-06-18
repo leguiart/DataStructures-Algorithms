@@ -3,7 +3,7 @@
 #21 de octubre de 2015
 #Algoritmos y Estructuras de Datos
 #Programa: 05
-#Autores: Eguiarte Morett Luis Andres, Vilchis Martinez Misael, Alvarado de Paz Carlos Fernando, Romo Bravo Katia Fernanda
+#Author: @leguiart
 import math
 #Definiendo funciones auxiliares
 

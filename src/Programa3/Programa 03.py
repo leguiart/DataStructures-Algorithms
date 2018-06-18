@@ -3,7 +3,7 @@
 #07 de septiembre de 2015
 #Algoritmos y Estructuras de Datos
 #Programa: 03
-#Autores: Eguiarte Morett Luis Andres, Vilchis Martinez Misael, Alvarado de Paz Carlos Fernando, Romo Bravo Katia Fernanda
+#Author: @leguiart
 
 #Inicializando variables globales, en este caso solo habra una lista con todas las letra del abecedario
 LETRAS=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']

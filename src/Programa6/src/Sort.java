@@ -12,7 +12,7 @@ Facultad de Ingenieria
 23 de noviembre de 2015
 Algoritmos y Estructuras de Datos
 Programa: 06
-Autores: Eguiarte Morett Luis Andres, Vilchis Martinez Misael, Alvarado de Paz Carlos Fernando, Romo Bravo Katia Fernanda
+Author: @leguiart
 */
 class Lista 
 {

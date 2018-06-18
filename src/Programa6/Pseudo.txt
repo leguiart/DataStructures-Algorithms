@@ -1,0 +1,57 @@
+﻿
+
+#Método de inserción
+
+Insercion(lista) 
+    
+tamaño<-longitud(lista) #Tamaño de la lista
+    
+c<-0
+    
+para i<-1 hasta tamaño
+        
+indice<-lista[i]
+        
+j<-i-1
+        
+c<-c+1
+        
+Si j>=0 y lista[j]>indice
+            
+lista[j+1]<-lista[j]
+            
+j<-j-1
+        
+lista[j+1]=indice
+    
+Regresa lista, c
+
+
+
+
+
+#Método de selección
+
+Seleccion(lista)
+    
+tamaño<-longitud(lista) #Tamaño de lista
+    
+para i<-0 hasta tamaño-1
+        
+m<-i
+        
+k<-lista[i]
+        
+para j<-1 hasta tamaño
+            
+Si lista[j]<k
+                
+m<-j
+                
+k<-lista[j]
+        
+lista[m]<-lista[i] #Intercambiar listas
+        
+lista[i]<-k
+    
+regresar lista

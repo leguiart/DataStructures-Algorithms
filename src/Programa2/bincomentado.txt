@@ -1,0 +1,119 @@
+#Universidad Nacional Autónoma de México
+#Facultad de Ingeniería
+#20 de agosto de 2015
+#Algoritmos y Estructuras de Datos
+#Programa: 02
+#Autores: Eguiarte Morett Luis Andrés, Vilchis Martínez Misael, Alvarado de Páz Carlos Fernando, Romo Bravo Katia Fernanda
+
+#Definiendo una función que retorna una cadena con elementos de una lista.
+def st(lst):
+    s=''
+    for i in range(len(lst)):
+        s=s+str(lst[i])
+    return s
+
+#Definiendo una función que tiene como argumentos un número decimal y un número de bits, esta función procesa el número decimal para convertirlo a binario, el número de bits definen al 
+# número que se podrá representar y si se agregarán ceros en los lugares sobrantes.
+def bin(dec,n):
+    b=list()
+    sign=False
+    if dec<0:
+        sign=True
+        dec=dec*-1
+    while dec!=0:
+        if dec%2==0:
+            b.append(0)
+        else:
+            b.append(1)
+        dec=dec/2
+    while len(b)<n-1:
+        b.append(0)
+    if sign:
+        b.append(1)
+    else:
+        b.append(0)
+    b.reverse()
+    return b
+
+#Definiendo una función que tiene como entrada el número en decimal y el número de bits, la cual llamará a su vez a la función bin para obtener una lista que contenga a los elementos de 
+#el número en binario, esta lista a su vez la operará complementandola, únicamente dejando el bit de signo intacto.
+def comp1(dec,n):
+    #Declarando una lista vacía
+    lista=[]
+    #Ciclo for que pasa por cada elemento de la lista que regresa la función bin con los elementos del número binario y que evalúa si el elemento es el elemento cero se pasa como tal
+    #si no a cada lugar de la lista sobre la cual se esta operando se efectuará una evaluación, si la lista en este lugar contiene un cero, a la lista nueva se le agregará un uno y 
+    #viceversa.
+    for i in range(len(bin(dec,n))):
+        if i>0:
+            if bin(dec,n)[i]==0:
+                lista.append(1)
+            else:
+                lista.append(0)
+        else:
+            lista.append(bin(dec,n)[i])
+    return lista
+
+#Definiendo una función que tiene las mismas entradas que las dos anteriores pero complementa a dos.
+def comp2(dec,n):
+    lista=bin(dec,n)
+    #Invirtiendo la lista para poder operar el número binario "de derecha a izquierda".
+    lista.reverse()
+    #Lista auxiliar que obtendrá cada elemento de la cadena de caracteres que regresa la funcion bin
+    a=[]
+    #Variable bandera que cambiara su valor en cuanto se encuentre con un 1 en el numero binario leído de derecha a izquierda.
+    switch=False
+    cont=0
+    #Ciclo for para llenar la lista a[] que opera sobre la lista obtenida de la función bin y que en cuanto encuentre un valor de uno, todos los lugares siguientes excepto el último (signo)
+    #los complementará.
+    for i in lista:
+        if cont==len(lista)-1:
+            a.append(i)
+            break
+        if switch:
+            if i==0:
+                a.append(1)
+            elif i==1:
+                a.append(0)
+        else:
+            a.append(i)
+        if i==1:
+            switch=True
+        cont+=1
+    a.reverse()
+    return a
+
+"""print "Pruebas\n"
+
+print "Signo y magnitud:"
+
+print st(bin(-110,9))
+print st(bin(-57,9))
+print st(bin(28,9))
+print st(bin(75,9))
+print st(bin(113,9))
+
+print "\nComplemento a 1:"
+
+print st(comp1(-110,9))
+print st(comp1(-57,9))
+print st(comp1(28,9))
+print st(comp1(75,9))
+print st(comp1(113,9))
+
+print "\nComplemento a 2:"
+
+print st(comp2(-110,9))
+print st(comp2(-57,9))
+print st(comp2(28,9))
+print st(comp2(75,9))
+print st(comp2(113,9))"""
+
+
+d=raw_input("Introducir numero decimal")
+n=raw_input("Introducir numero de bits")
+print "\nSigno y magnitud:"
+print st(bin(int(d),int(n)))
+print "\nComplemento a 1:"
+print st(comp1(int(d),int(n)))
+print "\nComplemento a 2:"
+print st(comp2(int(d),int(n)))
